@@ -17,7 +17,7 @@ class NamavaClient:
         return self._send_request(
             method="GET",
             url=f"{self.BASE_URL}/v1.0/medias/{media_id}/play?isKid=false",
-        ).json()
+        ).json()['result']
 
     def get_m3u8_urls(self, master_url: str):
         response_text = self._send_request(method="GET", url=master_url).text
